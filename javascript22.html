@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript </title>
+    <script>
+        function procesar(){
+            document.getElementById('txtRes').value="";
+            //obtener el valor de edad
+            let xe = document.getElementById('txtEdad').value;
+
+            if( xe > 0 && xe < 100 ){
+                //Procesando
+                if( xe >= 18 ){
+                    document.getElementById('txtRes').value="Mayor de edad";
+                    document.getElementById('txtRes').style.color="blue";
+                }else{
+                    document.getElementById('txtRes').value="Menor de edad";
+                    document.getElementById('txtRes').style.color="red";
+                }
+                
+            } else{
+                alert("Verificar dato de edad")
+        }
+            }
+            
+        function limpiar(){
+            document.getElementById('txtEdad').value="";
+            document.getElementById('txtRes').value="";
+            //Focalizar -> ubicar el cursor en el objeto
+            document.getElementById('txtEdad').focus();
+        }
+        function cerrar(){
+            window.close;
+        }
+    </script>
+</head>
+<body>
+    <h1>Evaluar la edad</h1>
+    <hr>
+    <h3>Ingrese edad</h3>
+    <input type="text" name="" id="txtEdad">
+    <br>
+    <input type="text" name="" id="txtRes" disabled>
+    <br>
+    <input onclick="procesar();" type="button" value="Calcular">
+    <input onclick="limpiar();" type="button" value="Limpiar">
+    <input onclick="cerrar();" type="button" value="Salir">
+</body>
+</html>
